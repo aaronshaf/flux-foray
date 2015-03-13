@@ -1,3 +1,25 @@
+## Example actions
+
+```javascript
+import { Promise } from 'es6-promise'
+import { EventEmitter } from 'eventemitter3'
+
+export var events = new EventEmitter()
+
+export default MessageActions = {
+  create(data) {
+    // do something with data
+    events.emit('create')
+  },
+
+  somethingElse() {
+    return new Promise((resolve, reject) => {
+      // ...
+    })
+  }
+}
+```
+
 ## Example store
 
 ```javascript
@@ -20,28 +42,6 @@ var MessageStore = assign({
 MessageActions.events.addListener('create', MessageStore.handleCreate.bind(MessageStore))
 
 export default MessageStore
-```
-
-## Example actions
-
-```javascript
-import MessageStore from './stores/message'
-import { Promise } from 'es6-promise'
-
-export var events = new EventEmitter()
-
-export default MessageActions = {
-  create(data) {
-    // do something with data
-    events.emit('create')
-  },
-
-  somethingElse() {
-    return new Promise((resolve, reject) => {
-      // ...
-    })
-  }
-}
 ```
 
 ## Higher-order React component
