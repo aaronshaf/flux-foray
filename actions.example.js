@@ -6,13 +6,13 @@ export default {
 
   create: (data) => {
     // ...
-    this.events.emit('create')
+    this.events.emit('create', stuff)
   },
 
   somethingElse: () =. {
     return new Promise((resolve, reject) => {
       // ...
-      this.events.emit('create')
+      this.events.emit('somethingElse', stuff)
       resolve()
     })
   }
