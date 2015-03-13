@@ -9,7 +9,7 @@ export default {
     this.events.emit('create', stuff)
   },
 
-  somethingElse: () =. {
+  somethingElse: () => {
     return new Promise((resolve, reject) => {
       // ...
       this.events.emit('somethingElse', stuff)
